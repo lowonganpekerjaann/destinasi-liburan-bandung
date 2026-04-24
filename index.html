@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesona Bandung: Destinasi Wisata</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="snapshot" style="display: none"></canvas>
+    <header>
+      <h1>Jelajahi Pesona Bandung</h1>
+      <p>5 Destinasi Wajib Kunjung untuk Liburan Anda</p>
+    </header>
+
+    <div class="container">
+      <div class="destinasi-item">
+        <h2>1. Kawah Putih Ciwidey</h2>
+        <div class="image-container">
+          <img src="file/kawah-putih.jpg" alt="Kawah Putih Ciwidey" />
+        </div>
+        <p class="deskripsi">
+          **Keindahan Danau Vulkanik yang Eksotis.** Kawah Putih adalah danau
+          kawah vulkanik dengan air berwarna putih kehijauan yang unik dan
+          dikelilingi oleh batuan belerang. Suasana di sini sangat dingin,
+          berkabut, dan terasa eksotis, menjadikannya lokasi sempurna untuk
+          berfoto dengan latar belakang yang dramatis. Berada di ketinggian $\pm
+          2.400$ mdpl.
+        </p>
+        <button class="tombol-video" onclick="toggleVideo('video1')">
+          Lihat Video
+        </button>
+        <div id="video1" class="video-player">
+          <iframe
+            src="file/kawah.mp4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="destinasi-item">
+        <h2>2. Jalan Braga</h2>
+        <div class="image-container">
+          <img src="file/braga.jpeg" alt="Jalan Braga" />
+        </div>
+        <p class="deskripsi">
+          **Jejak Sejarah dan Estetika Klasik di Pusat Kota.** Jalan Braga
+          adalah ikon sejarah Kota Bandung dengan arsitektur kolonial Belanda
+          yang menawan. Tempat yang pas untuk *nongkrong* sambil menikmati kopi,
+          berburu kuliner, atau sekadar berfoto dengan latar belakang bangunan
+          *vintage* yang sangat *Instagramable*.
+        </p>
+        <button class="tombol-video" onclick="toggleVideo('video2')">
+          Lihat Video
+        </button>
+        <div id="video2" class="video-player">
+          <iframe
+            src="file/braga.mp4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="destinasi-item">
+        <h2>3. The Great Asia Africa</h2>
+        <div class="image-container">
+          <img src="file/asia.webp" alt="The Great Asia Africa" />
+        </div>
+        <p class="deskripsi">
+          **Keliling Dunia dalam Satu Hari.** Berlokasi di Lembang, tempat ini
+          menawarkan konsep wisata edukasi dan budaya yang unik. Anda bisa
+          "mengelilingi dunia" dengan mengunjungi miniatur landmark dan
+          merasakan nuansa dari berbagai negara seperti Jepang, Korea, dan
+          India. Cocok untuk keluarga.
+        </p>
+        <button class="tombol-video" onclick="toggleVideo('video3')">
+          Lihat Video
+        </button>
+        <div id="video3" class="video-player">
+          <iframe
+            src="file/asia.mp4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="destinasi-item">
+        <h2>4. Tangkuban Perahu</h2>
+        <div class="image-container">
+          <img src="file/tangkuban.webp" alt="Tangkuban Perahu" />
+        </div>
+        <p class="deskripsi">
+          **Legenda Sangkuriang dan Pemandangan Kawah Megah.** Gunung api aktif
+          yang menjadi ikon wisata alam. Daya tarik utamanya adalah **Kawah
+          Ratu**, kawah terbesar yang dapat dilihat langsung. Nikmati sejuknya
+          udara pegunungan dan dengarkan cerita rakyat Sangkuriang.
+        </p>
+        <button class="tombol-video" onclick="toggleVideo('video4')">
+          Lihat Video
+        </button>
+        <div id="video4" class="video-player">
+          <iframe
+            src="file/tangkuban.mp4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="destinasi-item">
+        <h2>5. Floating Market Lembang</h2>
+        <div class="image-container">
+          <img src="file/foating.jpg" alt="Floating Market Lembang" />
+        </div>
+        <p class="deskripsi">
+          **Pasar Terapung dengan Sensasi Kuliner Unik.** Menawarkan pengalaman
+          wisata kuliner yang unik di atas danau buatan. Anda bisa membeli
+          berbagai makanan dan minuman dari perahu-perahu yang berjejer rapi.
+          Tempat ini juga dilengkapi berbagai wahana rekreasi keluarga.
+        </p>
+        <button class="tombol-video" onclick="toggleVideo('video5')">
+          Lihat Video
+        </button>
+        <div id="video5" class="video-player">
+          <iframe
+            src="file/floating.mp4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
